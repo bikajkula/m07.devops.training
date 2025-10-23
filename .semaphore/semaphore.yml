@@ -19,13 +19,4 @@ blocks:
       secrets:
         - name: dokse
         - name: kubeconfig
-  - name: 'Block #2'
-    task:
-      secrets:
-        - name: kubeconfig
-      jobs:
-        - name: 'Job #1'
-          commands:
-            - checkout
-            - cd 1-monitor-kubernetes
-            - helm uninstall prometheus-community/kube-prometheus-stack --namespace balkan || true
+    dependencies: []
