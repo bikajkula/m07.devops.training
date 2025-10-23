@@ -12,7 +12,7 @@ blocks:
           commands:
             - checkout
             - cd 2-monitor-app
-            - 'docker build -t bikajkula/metrics-app:latest ./metrics-app'
+            - 'docker build -t bikajkula/metrics-app:latest .'
             - 'docker push bikajkula/metrics-app:latest'
             - kubectl apply -k kubernetes
       secrets:
