@@ -12,7 +12,6 @@ blocks:
           commands:
             - checkout
             - cd 1-monitor-kubernetes
-            - helm uninstall monitoring -n jesus-christ
             - 'helm repo add prometheus-community https://prometheus-community.github.io/helm-charts'
             - helm repo update
             - kubectl create namespace balkan
