@@ -26,4 +26,4 @@ blocks:
           commands:
             - checkout
             - cd 1-monitor-kubernetes
-            - helm uninstall --namespace balkan prometheus-community/kube-prometheus-stack
+            - helm uninstall prometheus-community/kube-prometheus-stack
