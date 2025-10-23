@@ -12,8 +12,9 @@ blocks:
           commands:
             - checkout
             - cd 2-monitor-app
-            - 'docker build -t bikajkula/metrics-app:latest .'
-            - 'docker push bikajkula/metrics-app:latest'
+            - echo $DOCKER_PASSWORD | docker login --username "$DOCKER_USERNAME" --password-stdin
+            - 'docker build -t "$DOCKER_USERNAME"/metrics-app:latest .'
+            - 'docker push "$DOCKER_USERNAME"/metrics-app:latest'
             - kubectl apply -k kubernetes
       secrets:
         - name: dokse
