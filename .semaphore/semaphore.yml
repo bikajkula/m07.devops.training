@@ -11,3 +11,10 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
+            - cd 1-monitor-kubernetes
+            - 'kubectl -n balkan '
+            - 'helm repo add prometheus-community https://prometheus-community.github.io/helm-charts'
+            - helm repo update
+            - helm install monitoring prometheus-community/kube-prometheus-stack --values monitoring-config.yaml
+      secrets:
+        - name: kubeconfig
